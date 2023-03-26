@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<p>My notes will be published here in chronological order. To read the entire post, simply click on the "Read More" link.</p>
+
+  <% notes.forEach (function(note){%>
+
+    <h2><%= note.title %></h2>
+
+    <% if (note.postText.length <= 100){ %>
+      <p><%= note.postText %></p>
+    <%} else { %>
+      <p class = "stripped"><%= note.postText.substring(0, 100) + "..." %> <a href="/posts/<%=note.title %>">Read more</a></p>
+    <% } %>
+  <% }) %>
+
+<%- include("partials/footer"); -%>
