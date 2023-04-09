@@ -6,10 +6,10 @@
 
     <h2><%= note.title %></h2>
 
-    <% if (note.postText.length <= 100){ %>
-      <p><%= note.postText %></p>
+    <% if (note.content.length <= 100){ %>
+      <p><%= note.content %></p>
     <%} else { %>
-      <p class = "stripped"><%= note.postText.substring(0, 100) + "..." %> <a href="/posts/<%=note.title %>">Read more</a></p>
+      <p class = "stripped"><%= note.content.substring(0, 100) + "..." %> <a href="/posts/<%= note._id %>">Read more</a></p>
     <% } %>
   <% }) %>
 
