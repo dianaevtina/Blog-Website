@@ -51,11 +51,11 @@ app.post("/compose", function(req,res){
     content: req.body.inputPost
   });
 
-  post.save(function(err){
-   if (!err){
-     res.redirect("/");
-   }
-  });
+  post.save().then(savedPost => {
+  savedPost === post;
+  res.redirect("/");
+});
+     
 });
 
 app.get("/posts/:reqPostID", function(req,res){
